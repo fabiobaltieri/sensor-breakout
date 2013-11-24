@@ -239,6 +239,17 @@ rev0</text>
 <rectangle x1="41.275" y1="4.445" x2="42.545" y2="5.715" layer="30"/>
 <rectangle x1="41.275" y1="1.905" x2="42.545" y2="3.175" layer="30"/>
 <rectangle x1="38.735" y1="1.905" x2="40.005" y2="3.175" layer="30"/>
+<text x="22.7584" y="5.08" size="0.6096" layer="121" rot="R90" align="center">PC0</text>
+<text x="22.7584" y="2.6416" size="0.6096" layer="121" rot="R90" align="center">+3V3</text>
+<text x="22.7584" y="7.7216" size="0.6096" layer="121" rot="R90" align="center">PC1</text>
+<text x="22.7584" y="10.16" size="0.6096" layer="121" rot="R90" align="center">PC2</text>
+<text x="22.7584" y="12.5984" size="0.6096" layer="121" rot="R90" align="center">PC3</text>
+<text x="22.7584" y="15.24" size="0.6096" layer="121" rot="R90" align="center">SDA</text>
+<text x="22.7584" y="17.8816" size="0.6096" layer="121" rot="R90" align="center">SCL</text>
+<text x="22.7584" y="20.32" size="0.6096" layer="121" rot="R90" align="center">PD0</text>
+<text x="22.7584" y="22.9616" size="0.6096" layer="121" rot="R90" align="center">PD3</text>
+<text x="22.7584" y="25.4" size="0.6096" layer="121" rot="R90" align="center">PD4</text>
+<text x="22.7584" y="35.56" size="0.6096" layer="121" rot="R90" align="center">GND</text>
 </plain>
 <libraries>
 <library name="rcl">
@@ -2340,6 +2351,26 @@ OSH Park compatible</description>
 <via x="41.91" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
 <via x="21.1328" y="0.8128" extent="1-16" drill="0.381"/>
 <wire x1="16.4592" y1="11.3792" x2="16.4592" y2="12.192" width="0" layer="19" extent="1-1"/>
+<via x="8.9408" y="7.9248" extent="1-16" drill="0.381"/>
+<via x="8.128" y="7.9248" extent="1-16" drill="0.381"/>
+<via x="8.3312" y="0.8128" extent="1-16" drill="0.381"/>
+<via x="18.0848" y="6.096" extent="1-16" drill="0.381"/>
+<via x="12.192" y="7.5184" extent="1-16" drill="0.381"/>
+<via x="14.8336" y="7.5184" extent="1-16" drill="0.381"/>
+<via x="0.8128" y="14.6304" extent="1-16" drill="0.381"/>
+<via x="4.064" y="15.6464" extent="1-16" drill="0.381"/>
+<via x="3.8608" y="26.8224" extent="1-16" drill="0.381"/>
+<via x="5.2832" y="26.8224" extent="1-16" drill="0.381"/>
+<via x="3.8608" y="24.5872" extent="1-16" drill="0.381"/>
+<via x="5.2832" y="24.5872" extent="1-16" drill="0.381"/>
+<via x="6.096" y="25.6032" extent="1-16" drill="0.381"/>
+<via x="15.24" y="23.368" extent="1-16" drill="0.381"/>
+<via x="19.9136" y="20.5232" extent="1-16" drill="0.381"/>
+<via x="19.5072" y="18.288" extent="1-16" drill="0.381"/>
+<via x="20.7264" y="17.0688" extent="1-16" drill="0.381"/>
+<via x="9.144" y="18.288" extent="1-16" drill="0.381"/>
+<via x="6.096" y="15.8496" extent="1-16" drill="0.381"/>
+<via x="8.128" y="16.8656" extent="1-16" drill="0.381"/>
 </signal>
 <signal name="+5V">
 <contactref element="C2" pad="1"/>
@@ -2610,9 +2641,9 @@ OSH Park compatible</description>
 <wire x1="15.24" y1="15.178965625" x2="15.24" y2="15.6464" width="0.2032" layer="1"/>
 <via x="15.24" y="15.6464" extent="1-16" drill="0.381"/>
 <wire x1="15.24" y1="15.6464" x2="14.0208" y2="14.4272" width="0.2032" layer="16"/>
-<wire x1="14.0208" y1="14.4272" x2="14.0208" y2="10.9728" width="0.2032" layer="16"/>
-<wire x1="14.0208" y1="10.9728" x2="15.6464" y2="9.3472" width="0.2032" layer="16"/>
-<wire x1="15.6464" y1="9.3472" x2="15.6464" y2="6.9088" width="0.2032" layer="16"/>
+<wire x1="14.0208" y1="14.4272" x2="14.0208" y2="10.3632" width="0.2032" layer="16"/>
+<wire x1="14.0208" y1="10.3632" x2="15.6464" y2="8.7376" width="0.2032" layer="16"/>
+<wire x1="15.6464" y1="8.7376" x2="15.6464" y2="6.9088" width="0.2032" layer="16"/>
 <wire x1="15.6464" y1="6.9088" x2="17.4752" y2="5.08" width="0.2032" layer="16"/>
 <via x="17.4752" y="5.08" extent="1-16" drill="0.381"/>
 <wire x1="17.4752" y1="3.898" x2="17.4752" y2="5.08" width="0.2032" layer="1"/>
@@ -3339,18 +3370,18 @@ OSH Park compatible</description>
 <approved hash="7,40,891e9e6aa304ab08"/>
 <approved hash="7,40,c08f11843c93f2e0"/>
 <approved hash="5,1,b028eb790a13a15e"/>
-<approved hash="2,20,d64b546218a868c9"/>
-<approved hash="2,20,46fe34c290821234"/>
 <approved hash="2,20,d8379305dd3774cd"/>
 <approved hash="2,20,8e1d3a808140d557"/>
-<approved hash="2,20,964b1463fca98cc9"/>
-<approved hash="2,20,82f1f0c33083b23b"/>
+<approved hash="2,20,d64b546218a868c9"/>
+<approved hash="2,20,46fe34c290821234"/>
 <approved hash="2,20,9837d304393690cd"/>
 <approved hash="2,20,4a12fe8121417558"/>
-<approved hash="2,20,864a046ce0a690c8"/>
-<approved hash="2,20,2ef35cc33083b239"/>
+<approved hash="2,20,964b1463fca98cc9"/>
+<approved hash="2,20,82f1f0c33083b23b"/>
 <approved hash="2,20,8836c30b25398ccc"/>
 <approved hash="2,20,e61052812141755a"/>
+<approved hash="2,20,864a046ce0a690c8"/>
+<approved hash="2,20,2ef35cc33083b239"/>
 <approved hash="2,20,a836e309413be8cc"/>
 <approved hash="2,20,a64a246e84a4f4c8"/>
 <approved hash="7,39,090a3ebd21cb7d04"/>
@@ -3428,14 +3459,16 @@ OSH Park compatible</description>
 <approved hash="7,40,450e7e07d9798908"/>
 <approved hash="7,40,248fd1e91a0e8410"/>
 <approved hash="7,40,c9d40994899449d4"/>
-<approved hash="4,1,67945da65f666554"/>
-<approved hash="4,1,bf9775a57762bd50"/>
-<approved hash="4,1,af9655a45760ad52"/>
-<approved hash="4,1,8792bda0bf78854a"/>
 <approved hash="4,1,799c43ae5d666754"/>
 <approved hash="4,1,a19f6bad7562bf50"/>
 <approved hash="4,1,b19e4bac5560af52"/>
 <approved hash="4,1,999aa3a8bd78874a"/>
+<approved hash="4,1,67945da65f666554"/>
+<approved hash="4,1,bf9775a57762bd50"/>
+<approved hash="4,1,af9655a45760ad52"/>
+<approved hash="4,1,8792bda0bf78854a"/>
+<approved hash="5,1,db04696fef4b8ed8"/>
+<approved hash="5,1,096416f391eb4440"/>
 <approved hash="5,1,a778e3dbb5ef0c4b"/>
 <approved hash="5,1,f81190f290162eac"/>
 <approved hash="5,1,060edd029031448e"/>
@@ -3445,8 +3478,8 @@ OSH Park compatible</description>
 <approved hash="19,1,1c65be6cbdcea022"/>
 <approved hash="5,1,13c36dcf61c337c1"/>
 <approved hash="19,1,eb2f52d751d0e828"/>
-<approved hash="19,1,cadcb324b2b8cb40"/>
 <approved hash="19,1,c8fcb104b118c8e0"/>
+<approved hash="19,1,cadcb324b2b8cb40"/>
 <approved hash="19,1,0b2cf2d4f1d3082b"/>
 <approved hash="5,1,63a3d40da11cc67d"/>
 <approved hash="19,1,aa0ff554c3fd3b8d"/>
