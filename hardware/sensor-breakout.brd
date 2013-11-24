@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="8" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -250,6 +250,12 @@ rev0</text>
 <text x="22.7584" y="22.9616" size="0.6096" layer="121" rot="R90" align="center">PD3</text>
 <text x="22.7584" y="25.4" size="0.6096" layer="121" rot="R90" align="center">PD4</text>
 <text x="22.7584" y="35.56" size="0.6096" layer="121" rot="R90" align="center">GND</text>
+<rectangle x1="36.195" y1="34.925" x2="37.465" y2="36.195" layer="29"/>
+<rectangle x1="38.735" y1="34.925" x2="40.005" y2="36.195" layer="29"/>
+<rectangle x1="41.275" y1="34.925" x2="42.545" y2="36.195" layer="29"/>
+<rectangle x1="36.195" y1="34.925" x2="37.465" y2="36.195" layer="30"/>
+<rectangle x1="38.735" y1="34.925" x2="40.005" y2="36.195" layer="30"/>
+<rectangle x1="41.275" y1="34.925" x2="42.545" y2="36.195" layer="30"/>
 </plain>
 <libraries>
 <library name="rcl">
@@ -2342,15 +2348,11 @@ OSH Park compatible</description>
 <via x="29.21" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
 <via x="31.75" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
 <via x="34.29" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
-<via x="36.83" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
-<via x="39.37" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
 <wire x1="20.7636" y1="15.8496" x2="20.7636" y2="15.406" width="0.6096" layer="1"/>
 <wire x1="20.7636" y1="15.406" x2="20.9296" y2="15.24" width="0.6096" layer="1"/>
 <wire x1="20.9296" y1="15.24" x2="20.9296" y2="14.6676" width="0.6096" layer="1"/>
 <wire x1="20.9296" y1="14.6676" x2="20.9668" y2="14.6304" width="0.6096" layer="1"/>
-<via x="41.91" y="35.56" extent="1-16" drill="1.016" diameter="1.8796"/>
 <via x="21.1328" y="0.8128" extent="1-16" drill="0.381"/>
-<wire x1="16.4592" y1="11.3792" x2="16.4592" y2="12.192" width="0" layer="19" extent="1-1"/>
 <via x="8.9408" y="7.9248" extent="1-16" drill="0.381"/>
 <via x="8.128" y="7.9248" extent="1-16" drill="0.381"/>
 <via x="8.3312" y="0.8128" extent="1-16" drill="0.381"/>
@@ -2371,6 +2373,11 @@ OSH Park compatible</description>
 <via x="9.144" y="18.288" extent="1-16" drill="0.381"/>
 <via x="6.096" y="15.8496" extent="1-16" drill="0.381"/>
 <via x="8.128" y="16.8656" extent="1-16" drill="0.381"/>
+<via x="38.1" y="36.195" extent="1-16" drill="0.381"/>
+<via x="40.64" y="36.195" extent="1-16" drill="0.381"/>
+<via x="43.18" y="36.195" extent="1-16" drill="0.381"/>
+<via x="43.18" y="34.925" extent="1-16" drill="0.381"/>
+<wire x1="16.4592" y1="11.3792" x2="16.4592" y2="12.192" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5V">
 <contactref element="C2" pad="1"/>
