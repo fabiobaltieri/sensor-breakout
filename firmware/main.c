@@ -19,6 +19,8 @@
 #include "nrf24l01p.h"
 #include "nrf_frames.h"
 
+#define div_round(a, b) (((a) + ((b)/2)) / (b))
+
 static struct nrf_frame frm;
 
 void reset_cpu(void)
@@ -42,12 +44,24 @@ static void hello(void)
 
 static void fill_frame(struct nrf_frame *frm)
 {
+	struct nrf_ambient *na = &frm->msg.ambient;
+	uint32_t val;
+
 	memset(frm, 0, sizeof(*frm));
 
 	frm->board_id = 0xfa;
 	frm->msg_id = NRF_MSG_ID_AMBIENT;
 	frm->len = sizeof(*frm);
 	frm->seq = 0;
+
+	/* Vbatt */
+	val = adc_get(ADC_VBATT);
+	val = div_round(val * ADC_VREF_mV * VBAT_H,
+			ADC_VREF_BITS * VBAT_L);
+	na->vbatt = val;
+
+	if (is_charging())
+		na->vbatt |= NRF_POWER_VBATT_CHARGING;
 }
 
 int __attribute__((noreturn)) main(void)
@@ -56,6 +70,7 @@ int __attribute__((noreturn)) main(void)
 	spi_init();
 	nrf_init();
 	adc_init();
+	chg_init();
 
 	wdt_enable(WDTO_1S);
 
