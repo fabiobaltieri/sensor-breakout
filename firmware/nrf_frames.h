@@ -47,6 +47,7 @@ struct nrf_boot {
 union nrf_msg {
 	uint8_t generic[12];
 	struct nrf_power power;
+	struct nrf_ambient ambient;
 	struct nrf_boot boot;
 };
 
