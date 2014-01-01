@@ -11,10 +11,15 @@
 #include <avr/wdt.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include <string.h>
 
 #include "board.h"
+#include "adc.h"
 #include "spi.h"
 #include "nrf24l01p.h"
+#include "nrf_frames.h"
+
+static struct nrf_frame frm;
 
 void reset_cpu(void)
 {
@@ -35,11 +40,22 @@ static void hello(void)
 	}
 }
 
+static void fill_frame(struct nrf_frame *frm)
+{
+	memset(frm, 0, sizeof(*frm));
+
+	frm->board_id = 0xfa;
+	frm->msg_id = NRF_MSG_ID_AMBIENT;
+	frm->len = sizeof(*frm);
+	frm->seq = 0;
+}
+
 int __attribute__((noreturn)) main(void)
 {
 	led_init();
 	spi_init();
 	nrf_init();
+	adc_init();
 
 	wdt_enable(WDTO_1S);
 
@@ -49,5 +65,12 @@ int __attribute__((noreturn)) main(void)
 	sei();
 	for (;;) {
 		wdt_reset();
+
+		nrf_standby();
+		fill_frame(&frm);
+		nrf_tx((uint8_t *)&frm, sizeof(frm));
+
+		led_toggle();
+		_delay_ms(300);
 	}
 }
