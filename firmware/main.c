@@ -13,6 +13,8 @@
 #include <util/delay.h>
 
 #include "board.h"
+#include "spi.h"
+#include "nrf24l01p.h"
 
 void reset_cpu(void)
 {
@@ -36,6 +38,8 @@ static void hello(void)
 int __attribute__((noreturn)) main(void)
 {
 	led_init();
+	spi_init();
+	nrf_init();
 
 	wdt_enable(WDTO_1S);
 
