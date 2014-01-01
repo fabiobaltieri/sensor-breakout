@@ -13,7 +13,7 @@
 DEVICE = atmega88p
 BOOTLOADER_ADDRESS = 1800
 F_CPU = 12000000
-FUSEH = 0xdd # BOD at 2.7V, 0xdf for BOD disabled
+FUSEH = 0xdd
 FUSEL = 0xef
 FUSEE = 0xf8
 LOCK  = 0xcf
