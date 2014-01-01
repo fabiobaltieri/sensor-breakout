@@ -14,6 +14,7 @@
 #include <string.h>
 
 #include "board.h"
+#include "id.h"
 #include "adc.h"
 #include "spi.h"
 #include "nrf24l01p.h"
@@ -49,7 +50,7 @@ static void fill_frame(struct nrf_frame *frm)
 
 	memset(frm, 0, sizeof(*frm));
 
-	frm->board_id = 0xfa;
+	frm->board_id = get_board_id();
 	frm->msg_id = NRF_MSG_ID_AMBIENT;
 	frm->len = sizeof(*frm);
 	frm->seq = 0;
@@ -71,6 +72,7 @@ int __attribute__((noreturn)) main(void)
 	nrf_init();
 	adc_init();
 	chg_init();
+	read_board_id();
 
 	wdt_enable(WDTO_1S);
 
