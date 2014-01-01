@@ -14,7 +14,7 @@
 
 #include "board.h"
 
-static void reset_cpu(void)
+void reset_cpu(void)
 {
 	wdt_disable();
 
