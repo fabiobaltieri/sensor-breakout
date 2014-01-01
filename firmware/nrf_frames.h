@@ -1,8 +1,13 @@
 #include <stdint.h>
 
+/* Message types */
+
 #define NRF_MSG_ID_GENERIC	0x00
 #define NRF_MSG_ID_POWER	0x01
+#define NRF_MSG_ID_AMBIENT	0x02
 #define NRF_MSG_ID_BOOT		0xff
+
+/* Power sensor */
 
 #define NRF_POWER_VBATT_CHARGING	(1 << 15)
 #define NRF_POWER_VBATT_MASK		0x7fff
@@ -11,6 +16,18 @@ struct nrf_power {
 	uint16_t vbatt;
 	uint8_t _spare[2];
 };
+
+/* Ambient sensor */
+
+#define NRF_AMBIENT_VBATT_CHARGING	(1 << 15)
+#define NRF_AMBIENT_VBATT_MASK		0x7fff
+struct nrf_ambient {
+	uint16_t value[4];
+	uint16_t vbatt;
+	uint8_t _spare[2];
+};
+
+/* OTA bootloader */
 
 #define NRF_BOOT_CMD_ACK	0x00
 #define NRF_BOOT_CMD_BOOT	0x01
@@ -24,6 +41,8 @@ struct nrf_boot {
 	uint8_t cksum;
 	uint8_t payload[10];
 };
+
+/* Base definitions */
 
 union nrf_msg {
 	uint8_t generic[12];
