@@ -11887,11 +11887,11 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="R0603" value="2k2"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R0603" value="1k5"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0603" value="68"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0603" value="68"/>
 <part name="U1" library="SparkFun-PowerIC" deviceset="MCP73831" device=""/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R0603" value="TBD"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0603" value="3k9"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0603" value="5k6"/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
