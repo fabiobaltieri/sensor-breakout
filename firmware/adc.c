@@ -34,9 +34,12 @@ void adc_stop(void)
 	ADCSRA = 0x00; /* ADC disable */
 }
 
-uint16_t adc_get (uint8_t cfg)
+uint16_t adc_get(uint8_t cfg, uint8_t intref)
 {
-	ADMUX = (1 << REFS1) | (1 << REFS0) | (cfg & 0x0f);
+	if (intref)
+		ADMUX = (1 << REFS1) | (1 << REFS0) | (cfg & 0x0f);
+	else
+		ADMUX = (0 << REFS1) | (1 << REFS0) | (cfg & 0x0f);
 
 	/* wait signals to stabilize */
 	_delay_ms(5);

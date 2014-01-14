@@ -56,7 +56,7 @@ static void fill_frame(struct nrf_frame *frm)
 	frm->seq = 0;
 
 	/* Vbatt */
-	val = adc_get(ADC_VBATT);
+	val = adc_get(ADC_VBATT, 1);
 	val = div_round(val * ADC_VREF_mV * VBAT_H,
 			ADC_VREF_BITS * VBAT_L);
 	na->vbatt = val;
