@@ -65,6 +65,12 @@ static void fill_frame(struct nrf_frame *frm)
 		na->vbatt |= NRF_POWER_VBATT_CHARGING;
 }
 
+ISR(PCINT0_vect)
+{
+	nrf_poll();
+	led_off();
+}
+
 int __attribute__((noreturn)) main(void)
 {
 	led_init();
@@ -73,6 +79,10 @@ int __attribute__((noreturn)) main(void)
 	adc_init();
 	chg_init();
 	read_board_id();
+
+	/* nRF interrupt */
+	NRF_PCMSK |= _BV(NRF_PCINT);
+	PCICR |= _BV(PCIE0);
 
 	wdt_enable(WDTO_1S);
 
@@ -85,9 +95,10 @@ int __attribute__((noreturn)) main(void)
 
 		nrf_standby();
 		fill_frame(&frm);
+
+		led_on();
 		nrf_tx((uint8_t *)&frm, sizeof(frm));
 
-		led_toggle();
 		_delay_ms(300);
 	}
 }

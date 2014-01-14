@@ -34,6 +34,9 @@ void reset_cpu(void);
 #define nrf_ce_h() (NRF_PORT |=  _BV(NRF_CE))
 #define nrf_ce_l() (NRF_PORT &= ~_BV(NRF_CE))
 
+#define NRF_PCMSK PCMSK0
+#define NRF_PCINT PCINT0
+
 /* Charger */
 #define CHG_PORT        PORTD
 #define CHG_PIN         PIND
