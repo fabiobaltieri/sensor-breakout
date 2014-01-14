@@ -217,7 +217,8 @@ uint8_t nrf_poll(void)
 
 	/* TX data sent */
 	if (status & TX_DS) {
-		nrf_rx_mode();
+		/* nrf_rx_mode(); */
+		nrf_powerdown();
 	}
 
 	/* TX max retry */
