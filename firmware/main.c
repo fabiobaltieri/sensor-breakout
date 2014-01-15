@@ -8,6 +8,7 @@
  */
 
 #include <avr/io.h>
+#include <avr/sleep.h>
 #include <avr/wdt.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -68,7 +69,18 @@ static void fill_frame(struct nrf_frame *frm)
 ISR(PCINT0_vect)
 {
 	nrf_poll();
+
 	led_off();
+}
+
+ISR(WDT_vect)
+{
+	led_on();
+
+	fill_frame(&frm);
+
+	nrf_standby();
+	nrf_tx((uint8_t *)&frm, sizeof(frm));
 }
 
 int __attribute__((noreturn)) main(void)
@@ -84,21 +96,16 @@ int __attribute__((noreturn)) main(void)
 	NRF_PCMSK |= _BV(NRF_PCINT);
 	PCICR |= _BV(PCIE0);
 
-	wdt_enable(WDTO_1S);
+	/* WDT as periodic interrupt */
+	WDTCSR |= (1 << WDE) | (1 << WDCE);
+	WDTCSR = (0 << WDCE) | (1 << WDIF) | (1 << WDIE) |
+		(1 << WDP2) | (0 << WDP1) | (1 << WDP0);
 
 	hello();
 	led_off();
 
 	sei();
 	for (;;) {
-		wdt_reset();
-
-		nrf_standby();
-		fill_frame(&frm);
-
-		led_on();
-		nrf_tx((uint8_t *)&frm, sizeof(frm));
-
-		_delay_ms(300);
+		sleep_mode();
 	}
 }
