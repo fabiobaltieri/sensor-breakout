@@ -106,6 +106,7 @@ int __attribute__((noreturn)) main(void)
 
 	sei();
 	for (;;) {
+		set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 		sleep_mode();
 	}
 }
