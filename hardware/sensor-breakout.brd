@@ -2168,7 +2168,7 @@ OSH Park compatible</description>
 <element name="BOX1" library="hammond" package="1551R-1HOLE" value="HAMMOND-BOX-1551R-1H" x="44" y="44" rot="R180"/>
 <element name="C1" library="rcl" package="C0603" value=".1u" x="8.5344" y="13.6144" rot="R180"/>
 <element name="C2" library="rcl" package="C0603" value=".1u" x="5.08" y="10.7696" rot="R270"/>
-<element name="U4" library="SparkFun-PowerIC" package="SOT23-5" value="MCP5301" x="8.5344" y="11.3792" rot="R270"/>
+<element name="U4" library="SparkFun-PowerIC" package="SOT23-5" value="MIC5301" x="8.5344" y="11.3792" rot="R270"/>
 <element name="C4" library="rcl" package="C0603" value="1u" x="1.8288" y="10.3632"/>
 <element name="IC1" library="balto" package="MLF32-TH" value="ATMEGA168-MU" x="16.4592" y="12.192" rot="R225"/>
 <element name="C3" library="rcl" package="C0603" value=".1u" x="12.192" y="9.5504" rot="R270"/>

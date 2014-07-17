@@ -11866,7 +11866,7 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <part name="C2" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="U4" library="SparkFun-PowerIC" deviceset="V_REG_LDO" device="SMD" value="MCP5301"/>
+<part name="U4" library="SparkFun-PowerIC" deviceset="V_REG_LDO" device="SMD" value="MIC5301"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0603" value="1u"/>
 <part name="GND28" library="supply1" deviceset="GND" device=""/>
